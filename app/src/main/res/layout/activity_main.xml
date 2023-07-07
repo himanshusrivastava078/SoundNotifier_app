@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+
+    <Button
+        android:id="@+id/btnSelectSound"
+        android:layout_width="228dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="348dp"
+        android:layout_marginEnd="98dp"
+        android:text="Select Sound"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/etDuration"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSelectSound"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="43dp"
+        android:drawablePadding="10dp"
+        android:hint="Enter Time in Second"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+    <Button
+        android:id="@+id/btnPlayNotification"
+        android:layout_width="235dp"
+        android:layout_height="61dp"
+        android:layout_below="@id/etDuration"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="172dp"
+        android:text="Play Notification" />
+
+
+</RelativeLayout>

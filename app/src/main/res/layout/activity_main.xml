@@ -7,17 +7,30 @@
     android:layout_height="match_parent"
     android:background="@drawable/background">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="60dp"
+        android:text="Sound Notifier app"
+        android:textColor="@color/yellow"
+        android:textStyle="bold"
+        android:textSize="30sp" />
+
 
     <Button
         android:id="@+id/btnSelectSound"
-        android:layout_width="228dp"
-        android:layout_height="60dp"
+        android:layout_width="248dp"
+        android:layout_height="62dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="85dp"
         android:layout_marginTop="348dp"
-        android:layout_marginEnd="98dp"
+        android:layout_marginEnd="78dp"
         android:text="Select Sound"
         android:textColor="@color/white" />
 
@@ -39,19 +52,31 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
+<!--    <Button-->
+<!--        android:id="@+id/btnPlayNotification"-->
+<!--        android:layout_width="228dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/etDuration"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginStart="97dp"-->
+<!--        android:layout_marginTop="29dp"-->
+<!--        android:layout_marginEnd="79dp"-->
+<!--        android:layout_marginBottom="172dp"-->
+<!--        android:text="Play Notification" />-->
+
     <Button
         android:id="@+id/btnPlayNotification"
-        android:layout_width="235dp"
-        android:layout_height="61dp"
+        android:layout_width="228dp"
+        android:layout_height="60dp"
         android:layout_below="@id/etDuration"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="97dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="79dp"
-        android:layout_marginBottom="172dp"
-        android:text="Play Notification" />
-
-
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="505dp"
+        android:layout_marginEnd="80dp"
+        android:text="Play Notification"
+        android:textColor="@color/white" />
 </RelativeLayout>

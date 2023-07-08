@@ -16,10 +16,11 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
    private Button btnSelectSound;
-    private Button btnPlayNotification;
+   private Button btnPlayNotification;
    private  EditText etDuration;
    private Uri selectedSoundUri;
    private int durationInSeconds;
+   private int duration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +34,11 @@ public class MainActivity extends Activity {
         btnSelectSound.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
-               startActivityForResult(intent,1);
+
+                Intent intent = new Intent();
+                intent.setType("audio/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(intent,1);
 
             }
         });
@@ -45,12 +49,14 @@ public class MainActivity extends Activity {
                 String durationText= etDuration.getText().toString();
                 if(!durationText.isEmpty()){
                     durationInSeconds = Integer.parseInt(durationText);
+                    duration = durationInSeconds*1000;
+
                     //play the selected notification sound for the specified duration
                     if(selectedSoundUri!=null){
                         // Add your code to play the  notication sound here
                         Toast.makeText(MainActivity.this, "Playing notification for "+ durationInSeconds + " seconds.", Toast.LENGTH_SHORT).show();
 
-                        RingtonePlayer.play(MainActivity.this,selectedSoundUri,durationInSeconds);
+                        RingtonePlayer.play(MainActivity.this,selectedSoundUri,duration);
 
                     }else{
                         Toast.makeText( MainActivity.this, "Please Select a notication Sound.", Toast.LENGTH_SHORT).show();
@@ -67,7 +73,8 @@ public class MainActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode,  Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode== 1 && resultCode==RESULT_OK){
-            selectedSoundUri=data.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
+            selectedSoundUri= data.getData();
+
         }
     }
 }
